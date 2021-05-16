@@ -4,6 +4,33 @@
   
   
   <entry>
+    <title>软件设计师：软件工程</title>
+    <link href="/2021/05/16/RJSJS-10/"/>
+    <url>/2021/05/16/RJSJS-10/</url>
+    
+    <content type="html"><![CDATA[<h2 id="课程地址"><a href="#课程地址" class="headerlink" title="课程地址"></a>课程地址</h2><p><a href="https://www.bilibili.com/video/BV1Eb411W7kc?p=139">https://www.bilibili.com/video/BV1Eb411W7kc?p=139</a></p><h2 id="思维导图"><a href="#思维导图" class="headerlink" title="思维导图"></a>思维导图</h2><p><img src="/img/article_content/RJSJS-10.png"></p><h1 id="软件工程"><a href="#软件工程" class="headerlink" title="软件工程"></a>软件工程</h1><h2 id="软件开发模型"><a href="#软件开发模型" class="headerlink" title="软件开发模型"></a>软件开发模型</h2><p><img src="assets/1621177128.png" alt="软件开发模型"></p><h3 id="瀑布模型（SDLC）-结构化的典型代表"><a href="#瀑布模型（SDLC）-结构化的典型代表" class="headerlink" title="瀑布模型（SDLC） 结构化的典型代表"></a>瀑布模型（SDLC） 结构化的典型代表</h3><p>适用于需求明确的项目或二次开发</p><p>缺点：开发过程中需求不明确容易推翻已编码设计的过程，导致软件项目失败</p><p><img src="assets/markdown-img-paste-20191006131701696.png" alt="瀑布模型"></p><p><img src="assets/1621177444.png" alt="其他经典模型1"></p><h3 id="原型模型"><a href="#原型模型" class="headerlink" title="原型模型"></a>原型模型</h3><p>针对需求不明确的情况，运用于需求分析阶段。构建一个简易的系统（Demo）给用户演示，利于获取用户的需求</p><h3 id="演化模型"><a href="#演化模型" class="headerlink" title="演化模型"></a>演化模型</h3><p>从原型基础上经过多轮演化为最终产品</p><h3 id="增量模型"><a href="#增量模型" class="headerlink" title="增量模型"></a>增量模型</h3><p>原型模型思想 + 瀑布模型思想</p><p>优先开发重要的部分（核心模块）给用户使用，再逐步添加其他功能</p><h3 id="螺旋模型"><a href="#螺旋模型" class="headerlink" title="螺旋模型"></a>螺旋模型</h3><p>由多个模型组成，引入了<code>风险分析</code>（最重要特征）</p><p>以风险为驱动，有利于防范风险</p><p><img src="assets/1621177777.png" alt="螺旋模型"></p><h3 id="V模型"><a href="#V模型" class="headerlink" title="V模型"></a>V模型</h3><p>V模型<code>强调测试</code>贯穿开发过程始终</p><p>需求分析阶段需要写验收测试与系统测试的测试计划，发现需求设计过程中产生的问题</p><p>概要设计阶段（模块划分）需要写模块之间的集成测试的测试计划，发现模块划分的问题</p><p>详细设计阶段需要写模块的单元测试的测试计划</p><p><img src="assets/markdown-img-paste-20191006132942346.png" alt="其他经典模型2"></p><h3 id="喷泉模型-面型对象模型"><a href="#喷泉模型-面型对象模型" class="headerlink" title="喷泉模型 面型对象模型"></a>喷泉模型 面型对象模型</h3><h3 id="构件组装模型（CBSD）"><a href="#构件组装模型（CBSD）" class="headerlink" title="构件组装模型（CBSD）"></a>构件组装模型（CBSD）</h3><p>极大提高软件开发的复用性</p><p><img src="assets/1621178489.png" alt="构件组装模型（CBSD）"></p><h3 id="RAD模型-快速地构建应用系统"><a href="#RAD模型-快速地构建应用系统" class="headerlink" title="RAD模型 快速地构建应用系统"></a>RAD模型 快速地构建应用系统</h3><p>瀑布模型（SDLC）+构件组装模型（CBSD）</p><h3 id="敏捷开发方法"><a href="#敏捷开发方法" class="headerlink" title="敏捷开发方法"></a>敏捷开发方法</h3><p>局限性：只适用于小型项目（小步快跑）</p><p><img src="assets/1621178565.png" alt="敏捷开发方法"></p><h2 id="信息系统开发方法"><a href="#信息系统开发方法" class="headerlink" title="信息系统开发方法"></a>信息系统开发方法</h2><p><img src="assets/1621178867.png" alt="信息系统开发方法"></p><p>结构化法：流程固化不灵活</p><h2 id="需求开发"><a href="#需求开发" class="headerlink" title="需求开发"></a>需求开发</h2><p><img src="assets/1621179334.png" alt="需求分类与需求获取"></p><h2 id="结构化设计"><a href="#结构化设计" class="headerlink" title="结构化设计"></a>结构化设计</h2><h3 id="基本原则"><a href="#基本原则" class="headerlink" title="基本原则"></a>基本原则</h3><p><img src="assets/1621179866.png" alt="结构化设计的基本原则"></p><h3 id="内聚与耦合"><a href="#内聚与耦合" class="headerlink" title="内聚与耦合"></a>内聚与耦合</h3><p><img src="assets/1621180256.png" alt="内聚与耦合"></p><h3 id="系统结构-模块结构"><a href="#系统结构-模块结构" class="headerlink" title="系统结构/模块结构"></a>系统结构/模块结构</h3><p><img src="assets/1621180328.png" alt="系统结构/模块结构"></p><h2 id="软件测试（必考，上午）"><a href="#软件测试（必考，上午）" class="headerlink" title="软件测试（必考，上午）"></a>软件测试（必考，上午）</h2>]]></content>
+    
+    
+    <categories>
+      
+      <category>软考</category>
+      
+      <category>软件设计师</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>软件设计师</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>软件设计师：多媒体基础（1-3分）</title>
     <link href="/2021/05/16/RJSJS-9/"/>
     <url>/2021/05/16/RJSJS-9/</url>
