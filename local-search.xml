@@ -4,11 +4,65 @@
   
   
   <entry>
+    <title>软件设计师：多媒体基础（1-3分）</title>
+    <link href="/2021/05/16/RJSJS-9/"/>
+    <url>/2021/05/16/RJSJS-9/</url>
+    
+    <content type="html"><![CDATA[<h2 id="课程地址"><a href="#课程地址" class="headerlink" title="课程地址"></a>课程地址</h2><p><a href="https://www.bilibili.com/video/BV1Eb411W7kc?p=130">https://www.bilibili.com/video/BV1Eb411W7kc?p=130</a></p><h2 id="思维导图"><a href="#思维导图" class="headerlink" title="思维导图"></a>思维导图</h2><p><img src="/img/article_content/RJSJS-9.png"></p><h1 id="多媒体基础（1-3分）"><a href="#多媒体基础（1-3分）" class="headerlink" title="多媒体基础（1-3分）"></a>多媒体基础（1-3分）</h1><ul><li>多媒体技术相关概念</li><li>多媒体相关计算问题</li><li>常见多媒体标准</li><li>数据压缩技术</li></ul><h2 id="音频相关概念"><a href="#音频相关概念" class="headerlink" title="音频相关概念"></a>音频相关概念</h2><p>采样频率一般应为声音最高频率的2倍，录制说话声音（300-3400Hz）需要8KHz，录制乐器声音（20Hz-20kHz）使用44kHz</p><p><img src="assets/markdown-img-paste-20191001150615580.png" alt="音频相关概念"></p><h2 id="图像相关概念"><a href="#图像相关概念" class="headerlink" title="图像相关概念"></a>图像相关概念</h2><h3 id="亮度、色调、饱和度"><a href="#亮度、色调、饱和度" class="headerlink" title="亮度、色调、饱和度"></a>亮度、色调、饱和度</h3><p><img src="assets/1621175658.png" alt="亮度、色调、饱和度"></p><h3 id="彩色空间"><a href="#彩色空间" class="headerlink" title="彩色空间"></a>彩色空间</h3><p><img src="assets/1621175438.png" alt="彩色空间"></p><h2 id="多媒体相关计算问题"><a href="#多媒体相关计算问题" class="headerlink" title="多媒体相关计算问题"></a>多媒体相关计算问题</h2><p><img src="assets/1621175866.png" alt="计算方法"></p><p><img src="assets/1621176056.png" alt="例题"></p><h2 id="常见多媒体标准"><a href="#常见多媒体标准" class="headerlink" title="常见多媒体标准"></a>常见多媒体标准</h2><p>mp3：MPEG-1 layer3</p><p><img src="assets/1621176140.png" alt="常见多媒体标准"></p><h2 id="数据压缩技术基础"><a href="#数据压缩技术基础" class="headerlink" title="数据压缩技术基础"></a>数据压缩技术基础</h2><p>有冗余才能压缩</p><p><img src="assets/1621176314.png" alt="冗余"></p><h3 id="有损压缩（高压缩比，熵压缩法）和无损压缩（熵编码法）"><a href="#有损压缩（高压缩比，熵压缩法）和无损压缩（熵编码法）" class="headerlink" title="有损压缩（高压缩比，熵压缩法）和无损压缩（熵编码法）"></a>有损压缩（高压缩比，熵压缩法）和无损压缩（熵编码法）</h3><p><img src="assets/1621176563.png" alt="有损压缩和无损压缩"></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>软考</category>
+      
+      <category>软件设计师</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>软件设计师</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>软件设计师：法律法规知识和标准化基础知识</title>
+    <link href="/2021/05/16/RJSJS-8/"/>
+    <url>/2021/05/16/RJSJS-8/</url>
+    
+    <content type="html"><![CDATA[<h2 id="课程地址"><a href="#课程地址" class="headerlink" title="课程地址"></a>课程地址</h2><p><a href="https://www.bilibili.com/video/BV1Eb411W7kc?p=125">https://www.bilibili.com/video/BV1Eb411W7kc?p=125</a></p><h1 id="法律法规知识和标准化基础知识"><a href="#法律法规知识和标准化基础知识" class="headerlink" title="法律法规知识和标准化基础知识"></a>法律法规知识和标准化基础知识</h1><p><img src="assets/1621173166.png" alt="保护期限"></p><h2 id="保护期限"><a href="#保护期限" class="headerlink" title="保护期限"></a>保护期限</h2><p><img src="assets/markdown-img-paste-2019100114302698.png" alt="保护期限"></p><h2 id="知识产权人的确定"><a href="#知识产权人的确定" class="headerlink" title="知识产权人的确定"></a>知识产权人的确定</h2><h3 id="职务作品"><a href="#职务作品" class="headerlink" title="职务作品"></a>职务作品</h3><p><img src="assets/markdown-img-paste-20191001143510578.png" alt="知识产权人的确定"></p><h3 id="委托创作、合作开发"><a href="#委托创作、合作开发" class="headerlink" title="委托创作、合作开发"></a>委托创作、合作开发</h3><p><img src="assets/markdown-img-paste-20191001144034818.png" alt="知识产权人的确定"></p><h2 id="侵权判定（最多）"><a href="#侵权判定（最多）" class="headerlink" title="侵权判定（最多）"></a>侵权判定（最多）</h2><p>发表：公之于众</p><p><img src="assets/markdown-img-paste-20191001144728372.png" alt="侵权判定"></p><p><img src="assets/markdown-img-paste-20191001144805972.png" alt="侵权判定"></p><h2 id="标准的分类"><a href="#标准的分类" class="headerlink" title="标准的分类"></a>标准的分类</h2><p><img src="assets/markdown-img-paste-2019100114522705.png" alt="标准的分类"></p><p><img src="assets/markdown-img-paste-20191001145258962.png" alt="标准的分类"></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>软考</category>
+      
+      <category>软件设计师</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>软件设计师</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>软件设计师：程序设计语言与语言处理程序基础</title>
     <link href="/2021/05/16/RJSJS-7/"/>
     <url>/2021/05/16/RJSJS-7/</url>
     
-    <content type="html"><![CDATA[<h2 id="课程地址"><a href="#课程地址" class="headerlink" title="课程地址"></a>课程地址</h2><p><a href="https://www.bilibili.com/video/BV1Eb411W7kc?p=117">https://www.bilibili.com/video/BV1Eb411W7kc?p=117</a></p><h2 id="思维导图"><a href="#思维导图" class="headerlink" title="思维导图"></a>思维导图</h2><p><img src="/img/article_content/RJSJS-7.png"></p>]]></content>
+    <content type="html"><![CDATA[<h2 id="课程地址"><a href="#课程地址" class="headerlink" title="课程地址"></a>课程地址</h2><p><a href="https://www.bilibili.com/video/BV1Eb411W7kc?p=117">https://www.bilibili.com/video/BV1Eb411W7kc?p=117</a></p><h2 id="思维导图"><a href="#思维导图" class="headerlink" title="思维导图"></a>思维导图</h2><p><img src="/img/article_content/RJSJS-7.png"></p><h1 id="程序设计语言与语言处理程序基础（难度较高）"><a href="#程序设计语言与语言处理程序基础（难度较高）" class="headerlink" title="程序设计语言与语言处理程序基础（难度较高）"></a>程序设计语言与语言处理程序基础（难度较高）</h1><ul><li>编译与解释</li><li>文法</li><li>正规式（需要掌握，几乎都有）</li><li>有限自动机</li><li>表达式（需要掌握，偶尔考）</li><li>传值与传址（需要掌握，出现概率高）</li><li>多种程序语言特点</li></ul><h2 id="编译过程"><a href="#编译过程" class="headerlink" title="编译过程"></a>编译过程</h2><p>解释型：例如一行代码回车后立即解释</p><p>编译型：主动编译运行</p><p><img src="/img/article_content/RJSJS/markdown-img-paste-20190928130540117.png" alt="编译过程"></p><h2 id="文法"><a href="#文法" class="headerlink" title="文法"></a>文法</h2><h3 id="文法定义"><a href="#文法定义" class="headerlink" title="文法定义"></a>文法定义</h3><p><img src="/img/article_content/RJSJS/1621171360.png" alt="文法定义"></p><h3 id="文法分类"><a href="#文法分类" class="headerlink" title="文法分类"></a>文法分类</h3><p><img src="/img/article_content/RJSJS/1621171397.png" alt="文法分类"></p><h3 id="语法推导树"><a href="#语法推导树" class="headerlink" title="语法推导树"></a>语法推导树</h3><p>下图中：S能推导出aAS与a；A又能推导出SbA，SS，ba</p><p><img src="/img/article_content/RJSJS/markdown-img-paste-20190928135430735.png" alt="语法推导树"></p><h2 id="有限自动机（形象地表达状态转换）"><a href="#有限自动机（形象地表达状态转换）" class="headerlink" title="有限自动机（形象地表达状态转换）"></a>有限自动机（形象地表达状态转换）</h2><p><img src="/img/article_content/RJSJS/markdown-img-paste-20190928135652560.png" alt="有限自动机"></p><p><code>例题</code>：</p><p><img src="/img/article_content/RJSJS/markdown-img-paste-20190928140201991.png" alt="有限自动机例题"></p><h2 id="正规式（对有限自动机的另外一种表达形式）"><a href="#正规式（对有限自动机的另外一种表达形式）" class="headerlink" title="正规式（对有限自动机的另外一种表达形式）"></a>正规式（对有限自动机的另外一种表达形式）</h2><p><img src="/img/article_content/RJSJS/1621171760.png" alt="正规式"></p><h2 id="文法推导与正规式例题"><a href="#文法推导与正规式例题" class="headerlink" title="文法推导与正规式例题"></a>文法推导与正规式例题</h2><p>代入法</p><p><img src="/img/article_content/RJSJS/markdown-img-paste-2019092814003390.png" alt="文法推导与正规式例题"></p><h2 id="表达式"><a href="#表达式" class="headerlink" title="表达式"></a>表达式</h2><p>利用树的（前序、后序）遍历来求前缀表达式和后缀表达式</p><p><img src="/img/article_content/RJSJS/1621172572.png" alt="表达式"></p><h2 id="函数调用-传值与传址"><a href="#函数调用-传值与传址" class="headerlink" title="函数调用-传值与传址"></a>函数调用-传值与传址</h2><p><img src="/img/article_content/RJSJS/markdown-img-paste-20190928141133667.png" alt="函数调用"></p><h2 id="各种程序语言的特点"><a href="#各种程序语言的特点" class="headerlink" title="各种程序语言的特点"></a>各种程序语言的特点</h2><p><img src="/img/article_content/RJSJS/markdown-img-paste-20190928141107746.png" alt="各种程序语言的特点"></p>]]></content>
     
     
     <categories>
