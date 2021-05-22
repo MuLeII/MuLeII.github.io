@@ -207,7 +207,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      256 字
+      286 字
     </span>
   
 
@@ -259,7 +259,7 @@
             
               <p class="note note-info">
                 
-                  本文最后更新于：1 分钟前
+                  本文最后更新于：几秒前
                 
               </p>
             
@@ -284,14 +284,17 @@
 <h2 id="动态规划法"><a href="#动态规划法" class="headerlink" title="动态规划法"></a>动态规划法</h2><p>与分治法的区别：动态规划法往往需要构造一个表，查表</p>
 <p><img src="/img/article_content/RJSJS/1621691462.png" srcset="/img/loading.gif" lazyload alt="动态规划法"></p>
 <h2 id="案例分析"><a href="#案例分析" class="headerlink" title="案例分析"></a>案例分析</h2><p><code>例题1</code>：</p>
-<p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Eb411W7kc?p=200">BV1Eb411W7kc?p=200, 199, 202</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Eb411W7kc?p=200">BV1Eb411W7kc?p=200, 199, 210, 202</a></p>
 <p><img src="/img/article_content/RJSJS/1621691584.png" srcset="/img/loading.gif" lazyload><br><img src="/img/article_content/RJSJS/1621691751.png" srcset="/img/loading.gif" lazyload><br><img src="/img/article_content/RJSJS/1621691779.png" srcset="/img/loading.gif" lazyload><br><img src="/img/article_content/RJSJS/1621691814.png" srcset="/img/loading.gif" lazyload alt="例题1"></p>
 <p><code>解题思路</code>：先做概念题，后补充代码</p>
 <p>问题3：最先适宜策略结果比最优适宜策略差，且最优适宜策略属于贪心法，两者都不能确保得到最优解</p>
 <p><img src="/img/article_content/RJSJS/1621692488.png" srcset="/img/loading.gif" lazyload></p>
 <p>问题2：</p>
-<p>最先适宜策略</p>
-<p>最优适宜策略：每一步都选当前最优的方案 -&gt; 贪心法</p>
+<p>（5）最先适宜策略：用最小的代价找到一个合适的位置 -&gt; 贪心法</p>
+<p>（6）最优适宜策略：每一步都选当前局部最优的方案 -&gt; 贪心法</p>
+<p>（7）O(n<sup>2</sup>)</p>
+<p>（8）O(n<sup>2</sup>)</p>
+<p><img src="/img/article_content/RJSJS/1621696254.png" srcset="/img/loading.gif" lazyload></p>
 <p>问题1：</p>
 <p><img src="/img/article_content/RJSJS/1621692454.png" srcset="/img/loading.gif" lazyload></p>
 <p><code>例题2</code>：</p>
@@ -301,7 +304,7 @@
 <p> （5）分治法</p>
 <p> （6）T(n)=2T(n/2)*O(n)</p>
 <p> （7）单层循环 -&gt; O(nlog<sub>2</sub>n)</p>
-<p>  (8) 交换空间n -&gt; O(n)</p>
+<p> （8） 交换空间n -&gt; O(n)</p>
 <p> 问题3：</p>
 <p> （9）n1+n2</p>
 
