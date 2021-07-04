@@ -4,31 +4,6 @@
   
   
   <entry>
-    <title>Java项目</title>
-    <link href="/2021/06/27/java-project/"/>
-    <url>/2021/06/27/java-project/</url>
-    
-    <content type="html"><![CDATA[<h2 id="一、书评网（SSM）"><a href="#一、书评网（SSM）" class="headerlink" title="一、书评网（SSM）"></a>一、书评网（SSM）</h2><h3 id="客户端地址"><a href="#客户端地址" class="headerlink" title="客户端地址:"></a>客户端地址:</h3><p><a href="http://106.55.51.10:81/reader/">reader/index</a></p><p>用户名：<code>user_0</code>至<code>user_500</code></p><p>密码：<code>123456</code></p><h3 id="后台管理页地址"><a href="#后台管理页地址" class="headerlink" title="后台管理页地址:"></a>后台管理页地址:</h3><p><a href="http://106.55.51.10:81/reader/management/index.html">reader/management/index</a></p><p>用户名：<code>admin</code></p><p>密码：<code>123456</code></p><h2 id="二、微型电商网站（Spring-Boot）"><a href="#二、微型电商网站（Spring-Boot）" class="headerlink" title="二、微型电商网站（Spring Boot）"></a>二、微型电商网站（Spring Boot）</h2><h3 id="客户端地址-1"><a href="#客户端地址-1" class="headerlink" title="客户端地址:"></a>客户端地址:</h3><p><a href="http://106.55.51.10:82/#/index">mall/index</a></p><p>用户名：<code>test</code></p><p>密码：<code>12345678</code></p><h3 id="后台管理页地址-1"><a href="#后台管理页地址-1" class="headerlink" title="后台管理页地址:"></a>后台管理页地址:</h3><p><a href="http://106.55.51.10:82/admin/index.html#/">mall/admin/index</a></p><p>用户名：<code>admin</code></p><p>密码：<code>12345678</code></p><h2 id="项目截图"><a href="#项目截图" class="headerlink" title="项目截图"></a>项目截图</h2><h3 id="一、书评网"><a href="#一、书评网" class="headerlink" title="一、书评网"></a>一、书评网</h3><p><img src="/img/article_content/java-project/reader-1.png" alt="客户端主界面"></p><p><img src="/img/article_content/java-project/reader-2.png" alt="用户登录"></p><p><img src="/img/article_content/java-project/reader-3.png" alt="用户注册"></p><p><img src="/img/article_content/java-project/reader-4.png" alt="后台-管理员登录"></p><p><img src="/img/article_content/java-project/reader-5.png" alt="后台-图书数据管理"></p><p><img src="/img/article_content/java-project/reader-6.png" alt="后台-短评数据管理"></p><h3 id="二、微型电商网站"><a href="#二、微型电商网站" class="headerlink" title="二、微型电商网站"></a>二、微型电商网站</h3><p><img src="/img/article_content/java-project/mall-1.png" alt="客户端主界面"></p><p><img src="/img/article_content/java-project/mall-2.png" alt="用户登录"></p><p><img src="/img/article_content/java-project/mall-3.png" alt="商品详情"></p><p><img src="/img/article_content/java-project/mall-4.png" alt="购物车"></p><p><img src="/img/article_content/java-project/mall-5.png" alt="订单详情"></p><p><img src="/img/article_content/java-project/mall-6.png" alt="扫码支付"></p><p><img src="/img/article_content/java-project/mall-7.png" alt="订单列表"></p><p><img src="/img/article_content/java-project/mall-8.png" alt="后台-商品管理"></p><p><img src="/img/article_content/java-project/mall-9.png" alt="后台-商品分类管理"></p><p><img src="/img/article_content/java-project/mall-10.png" alt="后台-订单管理"></p>]]></content>
-    
-    
-    <categories>
-      
-      <category>Java</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>Java</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
     <title>软件设计师：面向对象程序设计（下午）</title>
     <link href="/2021/05/21/RJSJS-16/"/>
     <url>/2021/05/21/RJSJS-16/</url>
