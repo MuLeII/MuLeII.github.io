@@ -14,13 +14,13 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
   <meta name="theme-color" content="#2f4154">
-  <meta name="description" content="Spring中Bean实例化的三种方式">
+  <meta name="description" content="Spring常见问题">
   <meta name="author" content="MuLeII">
   <meta name="keywords" content="">
   
      <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script> <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css"/> 
   
-  <title>Spring中Bean实例化的三种方式 | MuLeII</title>
+  <title>Spring常见问题 | MuLeII</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
 
@@ -180,7 +180,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="Spring中Bean实例化的三种方式">
+            <span class="h2" id="subtitle" title="Spring常见问题">
               
             </span>
 
@@ -195,7 +195,7 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2021-07-12 22:42" pubdate>
+      <time datetime="2021-07-12 23:44" pubdate>
         2021年7月12日 晚上
       </time>
     </span>
@@ -207,7 +207,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      352 字
+      653 字
     </span>
   
 
@@ -217,7 +217,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      5
+      8
        分钟
     </span>
   
@@ -255,25 +255,34 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Spring中Bean实例化的三种方式</h1>
+            <h1 style="display: none">Spring常见问题</h1>
             
               <p class="note note-info">
                 
-                  本文最后更新于：1 小时前
+                  本文最后更新于：几秒前
                 
               </p>
             
             <div class="markdown-body">
-              <h1 id="Spring中Bean实例化的三种方式"><a href="#Spring中Bean实例化的三种方式" class="headerlink" title="Spring中Bean实例化的三种方式"></a>Spring中Bean实例化的三种方式</h1><h2 id="1、实用类构造器实例化（常用）"><a href="#1、实用类构造器实例化（常用）" class="headerlink" title="1、实用类构造器实例化（常用）"></a>1、实用类构造器实例化（常用）</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Person</span> </span>&#123;<br>    <span class="hljs-keyword">private</span> String name;<br>    <span class="hljs-keyword">private</span> Integer age;<br><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Person</span><span class="hljs-params">()</span> </span>&#123;<br>    &#125;<br><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Person</span><span class="hljs-params">(String name, Integer age)</span> </span>&#123;<br>        <span class="hljs-keyword">this</span>.name = name;<br>        <span class="hljs-keyword">this</span>.age = age;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-comment">&lt;!--构造函数实例化--&gt;</span><br><span class="hljs-comment">&lt;!-- 1.调用无参构造函数 --&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">bean</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;person1&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;Person&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">bean</span>&gt;</span><br><br><span class="hljs-comment">&lt;!-- 2.调用有参构造函数 --&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">bean</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;person2&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;Person&quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">constructor-arg</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;name&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;李华&quot;</span>/&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">constructor-arg</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;age&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;18&quot;</span>/&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">bean</span>&gt;</span><br></code></pre></td></tr></table></figure>
+              <h1 id="Spring常见问题"><a href="#Spring常见问题" class="headerlink" title="Spring常见问题"></a>Spring常见问题</h1><h2 id="1、Scope属性的作用与取值"><a href="#1、Scope属性的作用与取值" class="headerlink" title="1、Scope属性的作用与取值"></a>1、Scope属性的作用与取值</h2><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">bean</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;userDAO&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;UserDAOImpl&quot;</span>/&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">bean</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;userService&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;UserService&quot;</span> <span class="hljs-attr">scope</span>=<span class="hljs-string">&quot;prototype&quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">property</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;userDAO&quot;</span> <span class="hljs-attr">ref</span>=<span class="hljs-string">&quot;userDAO&quot;</span>/&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">bean</span>&gt;</span><br></code></pre></td></tr></table></figure>
 
-<h2 id="2、使用静态工厂方法实例化"><a href="#2、使用静态工厂方法实例化" class="headerlink" title="2、使用静态工厂方法实例化"></a>2、使用静态工厂方法实例化</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">PersonStaticFactory</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> Person <span class="hljs-title">createPerson</span><span class="hljs-params">(String name,<span class="hljs-keyword">int</span> age)</span></span>&#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> Person(name, age);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-comment">&lt;!-- 通过静态工厂创建对象--&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">bean</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;person3&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;PersonStaticFactory&quot;</span> <span class="hljs-attr">factory-method</span>=<span class="hljs-string">&quot;createPerson&quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">constructor-arg</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;name&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;李雷&quot;</span>/&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">constructor-arg</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;age&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;18&quot;</span>/&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">bean</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<p>1、默认情况下，scope=<code>&quot;singleton&quot;</code>，表示单例模式，由IOC容器自动创建且全局唯一。</p>
+<p>2、scope=<code>&quot;prototype&quot;</code>，表示多例模式，每一次调用getBean()时，会创建新的对象。</p>
+<p>3、scpoe=”request”/“session”：</p>
+<p>如果在工程中引入了SpringMVC，这两个属性就生效了，含义是：</p>
+<p>request，如果在同一个“request”请求内，对象是同一个。不同的请求，IOC容器会创建不同的对象。</p>
+<p>session，同一个session内部，多次调用getBean()获取的是同一个对象。不同的session，IOC会创建不同的对象。</p>
+<p>4、scope属性决定了在Spring工程中创建对象是单例还是多例。</p>
+<h2 id="2、lazy-init属性的作用"><a href="#2、lazy-init属性的作用" class="headerlink" title="2、lazy-init属性的作用"></a>2、lazy-init属性的作用</h2><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">bean</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;userDAO&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;UserDAOImpl&quot;</span>/&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">bean</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;userService&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;UserService&quot;</span> <span class="hljs-attr">lazy-init</span>=<span class="hljs-string">&quot;true&quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">property</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;userDAO&quot;</span> <span class="hljs-attr">ref</span>=<span class="hljs-string">&quot;userDAO&quot;</span>/&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">bean</span>&gt;</span><br></code></pre></td></tr></table></figure>
 
-<h2 id="3、使用实例工厂方法实例化"><a href="#3、使用实例工厂方法实例化" class="headerlink" title="3、使用实例工厂方法实例化"></a>3、使用实例工厂方法实例化</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">PersonFactory</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> Person <span class="hljs-title">createPerson</span><span class="hljs-params">(String name,<span class="hljs-keyword">int</span> age)</span></span>&#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> Person(name, age);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-comment">&lt;!-- 通过实例工厂创建对象--&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">bean</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;instanceFactory&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;PersonFactory&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">bean</span>&gt;</span><br><br><span class="hljs-tag">&lt;<span class="hljs-name">bean</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;person4&quot;</span> <span class="hljs-attr">factory-bean</span>=<span class="hljs-string">&quot;instanceFactory&quot;</span> <span class="hljs-attr">factory-method</span>=<span class="hljs-string">&quot;createPerson&quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">constructor-arg</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;name&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;韩梅梅&quot;</span>/&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">constructor-arg</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;age&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;17&quot;</span>/&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">bean</span>&gt;</span><br></code></pre></td></tr></table></figure>
+<p>lazy-init：懒加载，当设置为<code>true</code>时，表示只有用到这个Bean时，才会实例化。</p>
+<p>注意：当scope属性为“prototype”多例模式时，lazy-init就会失效。</p>
+<p>lazy-init有自己的使用场景，因为其作用是对象在第一次getBean()时被创建，所以可以起到减小服务器压力的作用。</p>
+<p>比如：当前有上千个类，但并不是所有的类都是目前需要的，有些是作为备用选项使用的。此时我们就可以使用lazy-init来减轻服务器和内存的压力，有利于系统的快速启动。</p>
+<h2 id="3、-Autowired与-Resource有什么区别"><a href="#3、-Autowired与-Resource有什么区别" class="headerlink" title="3、@Autowired与@Resource有什么区别"></a>3、@Autowired与@Resource有什么区别</h2><p>1、<code>@Autowired</code>：Spring提供的注入注解，由第三方提供；<code>@Resource</code>：java官方进行的定义</p>
+<p>2、二者的机制不同，@Autowired只能按照类型在IOC容器中进行匹配。而@Rresource可以通过设置“name”属性指定Bean id，可以按照“name”进行匹配。</p>
+<p>当@Resource不设置“name”属性时，会将“属性名”作为默认的“Bean id”在IOC容器中进行查找，当属性名和IOC容器中的“bean id”不一样时，这种情况下才会跟@Autowired一样采用类型进行匹配，其更加智能。（如果设置了“name”属性，则将设置的名称作为“bean id”进行精准匹配。如果没有设置“name”属性，优先使用属性名作为“bean id”到IOC容器中进行查找，如果匹配不到，再按照类型在IOC容器中进行查找）</p>
 
-<h3 id="静态工厂和实例工厂都是间接通过类构造器实现实例化"><a href="#静态工厂和实例工厂都是间接通过类构造器实现实例化" class="headerlink" title="静态工厂和实例工厂都是间接通过类构造器实现实例化"></a>静态工厂和实例工厂都是间接通过类构造器实现实例化</h3>
             </div>
             <hr>
             <div>
@@ -309,18 +318,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2021/07/12/Spring-Bean-injection-properties/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Spring中Bean注入属性的四种方式</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2021/07/12/Spring-IOC-and-DI/">
-                        <span class="hidden-mobile">Spring-谈谈对IOC和DI的理解</span>
+                      <a href="/2021/07/12/Spring-Bean-injection-properties/">
+                        <span class="hidden-mobile">Spring中Bean注入属性的四种方式</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
