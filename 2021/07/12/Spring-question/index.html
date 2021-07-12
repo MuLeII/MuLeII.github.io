@@ -207,7 +207,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      653 字
+      659 字
     </span>
   
 
@@ -268,7 +268,7 @@
 
 <p>1、默认情况下，scope=<code>&quot;singleton&quot;</code>，表示单例模式，由IOC容器自动创建且全局唯一。</p>
 <p>2、scope=<code>&quot;prototype&quot;</code>，表示多例模式，每一次调用getBean()时，会创建新的对象。</p>
-<p>3、scpoe=”request”/“session”：</p>
+<p>3、scpoe=<code>&quot;request&quot;</code>/<code>&quot;session&quot;</code>：</p>
 <p>如果在工程中引入了SpringMVC，这两个属性就生效了，含义是：</p>
 <p>request，如果在同一个“request”请求内，对象是同一个。不同的请求，IOC容器会创建不同的对象。</p>
 <p>session，同一个session内部，多次调用getBean()获取的是同一个对象。不同的session，IOC会创建不同的对象。</p>
@@ -276,12 +276,12 @@
 <h2 id="2、lazy-init属性的作用"><a href="#2、lazy-init属性的作用" class="headerlink" title="2、lazy-init属性的作用"></a>2、lazy-init属性的作用</h2><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">bean</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;userDAO&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;UserDAOImpl&quot;</span>/&gt;</span><br><span class="hljs-tag">&lt;<span class="hljs-name">bean</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;userService&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;UserService&quot;</span> <span class="hljs-attr">lazy-init</span>=<span class="hljs-string">&quot;true&quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">property</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;userDAO&quot;</span> <span class="hljs-attr">ref</span>=<span class="hljs-string">&quot;userDAO&quot;</span>/&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">bean</span>&gt;</span><br></code></pre></td></tr></table></figure>
 
 <p>lazy-init：懒加载，当设置为<code>true</code>时，表示只有用到这个Bean时，才会实例化。</p>
-<p>注意：当scope属性为“prototype”多例模式时，lazy-init就会失效。</p>
+<p>注意：当scope属性为<code>&quot;prototype&quot;</code>多例模式时，lazy-init就会失效。</p>
 <p>lazy-init有自己的使用场景，因为其作用是对象在第一次getBean()时被创建，所以可以起到减小服务器压力的作用。</p>
 <p>比如：当前有上千个类，但并不是所有的类都是目前需要的，有些是作为备用选项使用的。此时我们就可以使用lazy-init来减轻服务器和内存的压力，有利于系统的快速启动。</p>
 <h2 id="3、-Autowired与-Resource有什么区别"><a href="#3、-Autowired与-Resource有什么区别" class="headerlink" title="3、@Autowired与@Resource有什么区别"></a>3、@Autowired与@Resource有什么区别</h2><p>1、<code>@Autowired</code>：Spring提供的注入注解，由第三方提供；<code>@Resource</code>：java官方进行的定义</p>
-<p>2、二者的机制不同，@Autowired只能按照类型在IOC容器中进行匹配。而@Rresource可以通过设置“name”属性指定Bean id，可以按照“name”进行匹配。</p>
-<p>当@Resource不设置“name”属性时，会将“属性名”作为默认的“Bean id”在IOC容器中进行查找，当属性名和IOC容器中的“bean id”不一样时，这种情况下才会跟@Autowired一样采用类型进行匹配，其更加智能。（如果设置了“name”属性，则将设置的名称作为“bean id”进行精准匹配。如果没有设置“name”属性，优先使用属性名作为“bean id”到IOC容器中进行查找，如果匹配不到，再按照类型在IOC容器中进行查找）</p>
+<p>2、二者的机制不同，<code>@Autowired</code>只能按照类型在IOC容器中进行匹配。而<code>@Resource</code>可以通过设置“name”属性指定Bean id，可以按照“name”进行匹配。</p>
+<p>当<code>@Resource</code>不设置“name”属性时，会将“属性名”作为默认的“Bean id”在IOC容器中进行查找，当属性名和IOC容器中的“bean id”不一样时，这种情况下才会跟<code>@Autowired</code>一样采用类型进行匹配，其更加智能。（如果设置了“name”属性，则将设置的名称作为“bean id”进行精准匹配。如果没有设置“name”属性，优先使用属性名作为“bean id”到IOC容器中进行查找，如果匹配不到，再按照类型在IOC容器中进行查找）</p>
 
             </div>
             <hr>
