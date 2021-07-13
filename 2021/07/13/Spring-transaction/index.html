@@ -207,7 +207,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      0 字
+      422 字
     </span>
   
 
@@ -217,7 +217,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      1
+      4
        分钟
     </span>
   
@@ -259,12 +259,17 @@
             
               <p class="note note-info">
                 
-                  本文最后更新于：几秒前
+                  本文最后更新于：1 小时前
                 
               </p>
             
             <div class="markdown-body">
-              
+              <h1 id="Spring的声明式事务"><a href="#Spring的声明式事务" class="headerlink" title="Spring的声明式事务"></a>Spring的声明式事务</h1><p>声明式事务是指利用AOP自动提交、回滚数据库事务</p>
+<p>声明式事务规则：进入方法打开事务，执行成功提交，抛出运行时异常（RuntimeException）则回滚</p>
+<p><code>@Transactional</code>是声明式事务的注解，当<code>@Transactional</code>注解标于类前时, 表示类中所有方法都进行事务处理</p>
+<h3 id="Transactional注解的参数"><a href="#Transactional注解的参数" class="headerlink" title="@Transactional注解的参数"></a>@Transactional注解的参数</h3><h4 id="1、propagation-用于设置事务的传播行为"><a href="#1、propagation-用于设置事务的传播行为" class="headerlink" title="1、propagation 用于设置事务的传播行为"></a>1、propagation 用于设置事务的传播行为</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@Transactional(propagation = Propagation.REQUIRED)</span><br><span class="hljs-comment">//如果有事务，那么加入事务，没有的话新建一个（默认情况）</span><br><span class="hljs-meta">@Transactional(propagation = Propagation.NOT_SUPPORTED)</span><br><span class="hljs-comment">//容器不为这个方法开启事务，通常与“readOnly = true”搭配使用，表示方法是只读的，即：@Transactional(propagation = Propagation.NOT_SUPPORTED, readOnly = true)</span><br><span class="hljs-meta">@Transactional(propagation = Propagation.REQUIRES_NEW)</span><br><span class="hljs-comment">//不管是否存在事务，都创建一个新的事务，旧的事务挂起，等待新的事务执行完毕，继续执行旧的事务</span><br><span class="hljs-meta">@Transactional(propagation = Propagation.MANDATORY)</span><br><span class="hljs-comment">//必须在一个已有的事务中执行，否则抛出异常</span><br><span class="hljs-meta">@Transactional(propagation = Propagation.NEVER)</span><br><span class="hljs-comment">//必须在一个没有的事务中执行，否则抛出异常（与Propagation.MANDATORY相反）</span><br><span class="hljs-meta">@Transactional(propagation = Propagation.SUPPORTS)</span><br><span class="hljs-comment">//如果其他bean调用这个方法，在其他bean中声明事务，那就用事务，如果其他bean没有声明事务，那就不用事务</span><br></code></pre></td></tr></table></figure>
+
+<h4 id="2、rollbackFor-用于设置需要进行回滚的异常类数组，当方法中抛出指定异常数组中的异常时，则进行事务回滚"><a href="#2、rollbackFor-用于设置需要进行回滚的异常类数组，当方法中抛出指定异常数组中的异常时，则进行事务回滚" class="headerlink" title="2、rollbackFor 用于设置需要进行回滚的异常类数组，当方法中抛出指定异常数组中的异常时，则进行事务回滚"></a>2、rollbackFor 用于设置需要进行回滚的异常类数组，当方法中抛出指定异常数组中的异常时，则进行事务回滚</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-meta">@Transactional(rollbackFor = Exception.class)</span><br><span class="hljs-comment">//表示抛出所有类型的异常时，都进行回滚操作</span><br><span class="hljs-meta">@Transactional(rollbackFor = RuntimeException.class)</span><br><span class="hljs-comment">//表示抛出运行时异常时，进行回滚操作</span><br><span class="hljs-meta">@Transactional(rollbackFor = &#123;RuntimeException.class, Exception.class&#125;)</span><br><span class="hljs-comment">//指定多个异常类</span><br></code></pre></td></tr></table></figure>
             </div>
             <hr>
             <div>
@@ -299,6 +304,12 @@
                 <div class="post-prevnext">
                   <article class="post-prev col-6">
                     
+                    
+                      <a href="/2021/07/13/SpringMVC-RESTful/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">使用SpringMVC实现RESTful风格</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
                     
                   </article>
                   <article class="post-next col-6">
