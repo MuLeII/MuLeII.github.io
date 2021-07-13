@@ -4,11 +4,38 @@
   
   
   <entry>
-    <title>使用SpringMVC实现RESTful风格</title>
-    <link href="/2021/07/13/SpringMVC-Interceptor/"/>
-    <url>/2021/07/13/SpringMVC-Interceptor/</url>
+    <title>Mybatis的开发流程</title>
+    <link href="/2021/07/13/Mybatis-dev-flow/"/>
+    <url>/2021/07/13/Mybatis-dev-flow/</url>
     
-    <content type="html"><![CDATA[]]></content>
+    <content type="html"><![CDATA[<h1 id="Mybatis的开发流程"><a href="#Mybatis的开发流程" class="headerlink" title="Mybatis的开发流程"></a>Mybatis的开发流程</h1>]]></content>
+    
+    
+    <categories>
+      
+      <category>Java</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Java</tag>
+      
+      <tag>Mybatis</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>SpringMVC的执行流程</title>
+    <link href="/2021/07/13/SpringMVC-flow/"/>
+    <url>/2021/07/13/SpringMVC-flow/</url>
+    
+    <content type="html"><![CDATA[<h1 id="SpringMVC的执行流程"><a href="#SpringMVC的执行流程" class="headerlink" title="SpringMVC的执行流程"></a>SpringMVC的执行流程</h1><h4 id="1、浏览器发送请求，被DispaherServlet拦截"><a href="#1、浏览器发送请求，被DispaherServlet拦截" class="headerlink" title="1、浏览器发送请求，被DispaherServlet拦截"></a>1、浏览器发送请求，被DispaherServlet拦截</h4><ul><li><code>DispatcherServlet</code>是SpringMVC最核心的类，<code>DispatcherServlet</code>通过<code>url-pattern</code>绑定了根路径<code>/</code>（对所有地址进行映射），所以向当前工程发送的所有请求，都要通过<code>DispatcherServlet</code>进行处理</li></ul><h4 id="2、DispatcheServlet接到请求后，通过HandlerMapping接口及其实现类来寻找URL映射"><a href="#2、DispatcheServlet接到请求后，通过HandlerMapping接口及其实现类来寻找URL映射" class="headerlink" title="2、DispatcheServlet接到请求后，通过HandlerMapping接口及其实现类来寻找URL映射"></a>2、DispatcheServlet接到请求后，通过HandlerMapping接口及其实现类来寻找URL映射</h4><ul><li>HandlerMapping会扫描当前程序中所有的<code>GetMapping</code>/<code>PostMapping</code>注解，然后确认是哪个接口的哪个方法对应URL中的访问地址，当找到对应的接口后，就会自动到IOC容器中找到启动时已经创建好的Controller类的对象，然后使用对象对应的接口方法处理请求</li></ul><h4 id="3、当前的Controller是不知道如何解析“请求”和“响应”的，还要再依赖HanderAdapter适配器接口，处理请求与响应中的数据"><a href="#3、当前的Controller是不知道如何解析“请求”和“响应”的，还要再依赖HanderAdapter适配器接口，处理请求与响应中的数据" class="headerlink" title="3、当前的Controller是不知道如何解析“请求”和“响应”的，还要再依赖HanderAdapter适配器接口，处理请求与响应中的数据"></a>3、当前的Controller是不知道如何解析“请求”和“响应”的，还要再依赖<code>HanderAdapter</code>适配器接口，处理请求与响应中的数据</h4><ul><li><code>HanderAdapter</code>利用<code>HttpMessageConverter</code>对请求和响应进行处理和设置，如对url路径变量、请求参数进行解析</li></ul><h4 id="4、当Controller依靠HttpMessageConveter方法处理、解析请求以后，Controller根据解析结果执行代码"><a href="#4、当Controller依靠HttpMessageConveter方法处理、解析请求以后，Controller根据解析结果执行代码" class="headerlink" title="4、当Controller依靠HttpMessageConveter方法处理、解析请求以后，Controller根据解析结果执行代码"></a>4、当Controller依靠HttpMessageConveter方法处理、解析请求以后，Controller根据解析结果执行代码</h4><h4 id="5、Controller返回一个ModelAndView（模型与视图，表示要进行页面的显示和数据的绑定）对象"><a href="#5、Controller返回一个ModelAndView（模型与视图，表示要进行页面的显示和数据的绑定）对象" class="headerlink" title="5、Controller返回一个ModelAndView（模型与视图，表示要进行页面的显示和数据的绑定）对象"></a>5、Controller返回一个ModelAndView（模型与视图，表示要进行页面的显示和数据的绑定）对象</h4><h4 id="6、DispatcherServlet接收到返回的ModelAndVeiw对象后，会通过ViewResovler选择视图"><a href="#6、DispatcherServlet接收到返回的ModelAndVeiw对象后，会通过ViewResovler选择视图" class="headerlink" title="6、DispatcherServlet接收到返回的ModelAndVeiw对象后，会通过ViewResovler选择视图"></a>6、DispatcherServlet接收到返回的ModelAndVeiw对象后，会通过ViewResovler选择视图</h4><ul><li>如果ModelAndVeiw中返回的是一个<code>ftl</code> freemarker脚本，DispacherServlet会选择FreemarkerViewResolver 进行处理；如果是一个<code>jsp</code>，就会选择jsp对应的ViewResolver</li></ul><h4 id="7、被选择的视图解析器（例如FreemarkerViewResolver）会将我们存放在ModelAndView中的Model-数据-，结合Freemarker的模板文件，生成HTML"><a href="#7、被选择的视图解析器（例如FreemarkerViewResolver）会将我们存放在ModelAndView中的Model-数据-，结合Freemarker的模板文件，生成HTML" class="headerlink" title="7、被选择的视图解析器（例如FreemarkerViewResolver）会将我们存放在ModelAndView中的Model(数据)，结合Freemarker的模板文件，生成HTML"></a>7、被选择的视图解析器（例如FreemarkerViewResolver）会将我们存放在ModelAndView中的Model(数据)，结合Freemarker的模板文件，生成HTML</h4><h4 id="8、生成的HTML会随着响应，发回到浏览器，浏览器再对HTML进行解析，并进行展示"><a href="#8、生成的HTML会随着响应，发回到浏览器，浏览器再对HTML进行解析，并进行展示" class="headerlink" title="8、生成的HTML会随着响应，发回到浏览器，浏览器再对HTML进行解析，并进行展示"></a>8、生成的HTML会随着响应，发回到浏览器，浏览器再对HTML进行解析，并进行展示</h4>]]></content>
     
     
     <categories>
@@ -23,6 +50,37 @@
       <tag>Java</tag>
       
       <tag>Spring</tag>
+      
+      <tag>SpringMVC</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>SpringMVC拦截器</title>
+    <link href="/2021/07/13/SpringMVC-Interceptor/"/>
+    <url>/2021/07/13/SpringMVC-Interceptor/</url>
+    
+    <content type="html"><![CDATA[<h1 id="SpringMVC拦截器Interceptor"><a href="#SpringMVC拦截器Interceptor" class="headerlink" title="SpringMVC拦截器Interceptor"></a>SpringMVC拦截器Interceptor</h1><h4 id="1、SpringMVC拦截器用于对控制其方法进行前置、后置处理"><a href="#1、SpringMVC拦截器用于对控制其方法进行前置、后置处理" class="headerlink" title="1、SpringMVC拦截器用于对控制其方法进行前置、后置处理"></a>1、SpringMVC拦截器用于对控制其方法进行前置、后置处理</h4><h4 id="2、拦截器的底层实现技术是AOP"><a href="#2、拦截器的底层实现技术是AOP" class="headerlink" title="2、拦截器的底层实现技术是AOP"></a>2、拦截器的底层实现技术是<code>AOP</code></h4><h4 id="3、拦截器必须实现HandlerInterceptor接口"><a href="#3、拦截器必须实现HandlerInterceptor接口" class="headerlink" title="3、拦截器必须实现HandlerInterceptor接口"></a>3、拦截器必须实现<code>HandlerInterceptor</code>接口</h4><h2 id="使用场景"><a href="#使用场景" class="headerlink" title="使用场景"></a>使用场景</h2><h4 id="权限控制、登录拦截、字符集管理、国际化等，可以做到不修改原始代码的情况下实现功能。"><a href="#权限控制、登录拦截、字符集管理、国际化等，可以做到不修改原始代码的情况下实现功能。" class="headerlink" title="权限控制、登录拦截、字符集管理、国际化等，可以做到不修改原始代码的情况下实现功能。"></a>权限控制、登录拦截、字符集管理、国际化等，可以做到不修改原始代码的情况下实现功能。</h4><h2 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h2><h3 id="配置文件-applicationContext-xml"><a href="#配置文件-applicationContext-xml" class="headerlink" title="配置文件 applicationContext.xml"></a>配置文件 applicationContext.xml</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">beans</span> <span class="hljs-attr">...</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">mvc:interceptors</span>&gt;</span><br>        <span class="hljs-tag">&lt;<span class="hljs-name">mvc:interceptor</span>&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">mvc:mapping</span> <span class="hljs-attr">path</span>=<span class="hljs-string">&quot;/**&quot;</span>/&gt;</span><br>            <span class="hljs-tag">&lt;<span class="hljs-name">bean</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;MyInterceptor&quot;</span>/&gt;</span><br>        <span class="hljs-tag">&lt;/<span class="hljs-name">mvc:interceptor</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">mvc:interceptors</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">beans</span>&gt;</span><br></code></pre></td></tr></table></figure><h3 id="实现HandlerInterceptor接口"><a href="#实现HandlerInterceptor接口" class="headerlink" title="实现HandlerInterceptor接口"></a>实现HandlerInterceptor接口</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MyInterceptor</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">HandlerInterceptor</span> </span>&#123;<br><span class="hljs-comment">// 运行Controller内方法前执行</span><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">preHandle</span><span class="hljs-params">(HttpServletRequest request, HttpServletResponse response, Object handler)</span> <span class="hljs-keyword">throws</span> Exception </span>&#123;<br>        System.out.println(<span class="hljs-string">&quot;进入 preHandle 方法...&quot;</span> + request.getRequestURL().toString());<br>        <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;<span class="hljs-comment">//返回true，请求会送达Controller方法执行；返回false，请求中断，postHandle方法也不会执行</span><br>    &#125;<br> <br><span class="hljs-comment">// Controller内方法执行完后，视图渲染前执行（得到结果但响应还没真正返回时）</span><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">postHandle</span><span class="hljs-params">(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView)</span> <span class="hljs-keyword">throws</span> Exception </span>&#123;<br>        System.out.println(<span class="hljs-string">&quot;进入 postHandle 方法...&quot;</span> + request.getRequestURL().toString());<br>    &#125;<br> <br>    <span class="hljs-comment">// 后置方法，上面两个方法执行完后执行。无论preHandle返回true或false都会执行</span><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">afterCompletion</span><span class="hljs-params">(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex)</span> <span class="hljs-keyword">throws</span> Exception </span>&#123;<br>        System.out.println(<span class="hljs-string">&quot;进入 afterCompletion 方法...&quot;</span> + request.getRequestURL().toString());<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>Java</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Java</tag>
+      
+      <tag>Spring</tag>
+      
+      <tag>SpringMVC</tag>
       
     </tags>
     
@@ -50,6 +108,10 @@
       <tag>Java</tag>
       
       <tag>Spring</tag>
+      
+      <tag>SpringMVC</tag>
+      
+      <tag>RESTful</tag>
       
     </tags>
     
