@@ -4,6 +4,64 @@
   
   
   <entry>
+    <title>SpringBoot常见问题</title>
+    <link href="/2021/07/15/SpringBoot-question/"/>
+    <url>/2021/07/15/SpringBoot-question/</url>
+    
+    <content type="html"><![CDATA[<h1 id="SpringBoot常见问题"><a href="#SpringBoot常见问题" class="headerlink" title="SpringBoot常见问题"></a>SpringBoot常见问题</h1><h4 id="1-创建Spring-Boot工程的方法"><a href="#1-创建Spring-Boot工程的方法" class="headerlink" title="1. 创建Spring Boot工程的方法"></a>1. 创建Spring Boot工程的方法</h4><ul><li><p>使用<strong>Spring Initializr</strong>创建Spring Boot工程</p></li><li><p>使用<strong>Maven</strong>手动创建工程，Spring Initializr本质上就是一个Maven工程；Spring Boot 的兼容性很好，基于Maven可以在各种环境和各种IDE之间进行灵活切换</p></li></ul><h4 id="2-Spring-Boot的配置文件"><a href="#2-Spring-Boot的配置文件" class="headerlink" title="2. Spring Boot的配置文件"></a>2. Spring Boot的配置文件</h4><p>Spring Boot目前支持两种配置文件：</p><ul><li>第一种：<strong>属性文件</strong><code>.properties</code>，通过单行来描述要配置的选项；这种方式不是Spring Boot推荐的，当配置项很多的情况下，会导致配置非常混乱，阅读性差</li></ul><figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs properties"><span class="hljs-meta">server.port</span>=<span class="hljs-string">80</span><br><span class="hljs-meta">server.servlet.context-path</span>=<span class="hljs-string">/springboot</span><br><br><span class="hljs-meta">spring.datasource.driver-class-name</span>=<span class="hljs-string">com.mysql.cj.jdbc.Driver</span><br><span class="hljs-meta">spring.datasource.username</span>=<span class="hljs-string">root</span><br><span class="hljs-meta">spring.datasource.password</span>=<span class="hljs-string">root</span><br><span class="hljs-meta">spring.datasource.url</span>=<span class="hljs-string">jdbc:mysql://localhost:3306/springboot?useSSL=false&amp;useUnicode=true&amp;characterEncoding=UTF-8&amp;serverTimezone=Asia/Shanghai</span><br></code></pre></td></tr></table></figure><ul><li>第二种：<strong>YAML文件</strong><code>.yaml</code>，按层级进行区分，统一个类型的配置项都是集中在一起的，利于程序段维护</li></ul><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs YAML"><span class="hljs-attr">server:</span><br><span class="hljs-attr">port:</span> <span class="hljs-number">80</span><br><span class="hljs-attr">servlet:</span><br><span class="hljs-attr">context-path:</span> <span class="hljs-string">/springboot</span><br><br><span class="hljs-attr">spring:</span><br><span class="hljs-attr">datasource:</span><br><span class="hljs-attr">driver-class-name:</span> <span class="hljs-string">com.mysql.cj.jdbc.Driver</span><br><span class="hljs-attr">username:</span> <span class="hljs-string">root</span><br><span class="hljs-attr">password:</span> <span class="hljs-string">root</span><br><span class="hljs-attr">url:</span> <span class="hljs-string">jdbc:mysql://localhost:3306/springboot?useSSL=false&amp;useUnicode=true&amp;characterEncoding=UTF-8&amp;serverTimezone=Asia/Shanghai</span><br></code></pre></td></tr></table></figure><h4 id="3-Spring-Boot中的配置选项"><a href="#3-Spring-Boot中的配置选项" class="headerlink" title="3. Spring Boot中的配置选项"></a>3. Spring Boot中的配置选项</h4><ul><li><p>server.port 设置SpringBoot Web应用程序的端口号，默认值“8080”</p></li><li><p>server.servlet.context-path 设置应用上下文，默认值“/”</p></li><li><p>logging.file 设置日志文件的输出路径，默认情况下不会将日志文件进行输出的，只会在控制台进行打印</p></li><li><p>logging.level 最低日志输出级别，默认值“info”</p></li><li><p>debug 用于开启/关闭调试模式，在debug模式下可以看到更多的输出信息，有助于对程序进行调试，默认值“false”</p></li><li><p>spring.datasource.* 表示一组配置信息，表示与数据库相关配置，其中：</p><ol><li><p>datasource.draverClassName 代表驱动程序</p></li><li><p>datasource.url 表示连接字符串</p></li><li><p>datasource.password 数据库密码</p></li><li><p>datasource.userName 数据库用户名</p></li></ol></li></ul>]]></content>
+    
+    
+    <categories>
+      
+      <category>Java</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Java</tag>
+      
+      <tag>SpringBoot</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Spring、SpringMVC与SpringBoot的区别</title>
+    <link href="/2021/07/15/difference-between-Springboot-and-Spring/"/>
+    <url>/2021/07/15/difference-between-Springboot-and-Spring/</url>
+    
+    <content type="html"><![CDATA[<h1 id="Spring、SpringMVC与SpringBoot的区别"><a href="#Spring、SpringMVC与SpringBoot的区别" class="headerlink" title="Spring、SpringMVC与SpringBoot的区别"></a>Spring、SpringMVC与SpringBoot的区别</h1><h4 id="Spring是所有Spring应用的基础，通过Spring提供的IOC控制翻转和AOP面向切面编程特性，可以轻松的对对象进行管理"><a href="#Spring是所有Spring应用的基础，通过Spring提供的IOC控制翻转和AOP面向切面编程特性，可以轻松的对对象进行管理" class="headerlink" title="- Spring是所有Spring应用的基础，通过Spring提供的IOC控制翻转和AOP面向切面编程特性，可以轻松的对对象进行管理"></a>- <code>Spring</code>是所有Spring应用的基础，通过Spring提供的IOC控制翻转和AOP面向切面编程特性，可以轻松的对对象进行管理</h4><h4 id="SpringMVC是Spring的子项目-用于提供Web支持，作用是替代传统J2EE中的Servlet，可以提升web应用程序的兼容性和可维护性"><a href="#SpringMVC是Spring的子项目-用于提供Web支持，作用是替代传统J2EE中的Servlet，可以提升web应用程序的兼容性和可维护性" class="headerlink" title="- SpringMVC是Spring的子项目,用于提供Web支持，作用是替代传统J2EE中的Servlet，可以提升web应用程序的兼容性和可维护性"></a>- <code>SpringMVC</code>是Spring的子项目,用于提供Web支持，作用是替代传统J2EE中的Servlet，可以提升web应用程序的兼容性和可维护性</h4><p>在底层，SpringMVC的Controller也是要被Spring IOC容器管理的；SpringMVC的拦截器使用了AOP的特性，对Controller的行为进行扩展和控制</p><h4 id="SpringBoot是Spring体系的敏捷开发框架，提高了程序的开发效率"><a href="#SpringBoot是Spring体系的敏捷开发框架，提高了程序的开发效率" class="headerlink" title="- SpringBoot是Spring体系的敏捷开发框架，提高了程序的开发效率"></a>- <code>SpringBoot</code>是Spring体系的敏捷开发框架，提高了程序的开发效率</h4><p>它使用一套市场上最优的默认模板，来对Spring进行自动化配置和处理。其底层基于Spring和SpringMVC，并在此基础上额外的拓展了使用的功能，和默认配置模板。只需要简单地配置就可以实现Spring、SpringMVC的复杂功能</p><h4 id="Spring机构最主要的项目："><a href="#Spring机构最主要的项目：" class="headerlink" title="Spring机构最主要的项目："></a>Spring机构最主要的项目：</h4><ol><li><p><strong>Spring Boot</strong>是目前Spring结构最顶级的项目，它是一个敏捷开发框架，用于简化基于Java的应用程序开发</p></li><li><p><strong>Spring Framework</strong>是整个Spring的基础所在，所有的Spring项目都是以Spring Framework框架为基础的</p></li><li><p><strong>Spring Cloud</strong>对于分布式架构和微服务提供了良好的支持，是一整套完整的分布式解决方案</p></li><li><p><strong>Spring Data</strong>用于简化和处理关系型数据库、非关系型数据库、大数据等数据源进行交互的。Spring Data提供了统一的接口，通过操作一组API底层就可以对MySql和Oracle，以及Hbase这样的NoSql数据库进行操作</p></li><li><p><strong>Spring Batch</strong>用于高效率的批处理任务。如数据的批量导入，脚本批量执行</p></li><li><p><strong>Sprintg Security</strong>是行业中最著名的一款安全框架，系统中的登录验证、权限验证等通过它来完成</p></li><li><p><strong>Spring AMQP</strong>用于对消息队列进行支持，为市面上的消息队列产品提供了统一的接口，自动进行适配，从而简化了对于MQ消息队列产品的开发</p></li><li><p><strong>Spring Mobile</strong>用于手机开发，提供了响应式布局，和一些与移动web应用相关的开发特性</p></li></ol>]]></content>
+    
+    
+    <categories>
+      
+      <category>Java</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Java</tag>
+      
+      <tag>Spring</tag>
+      
+      <tag>SpringBoot</tag>
+      
+      <tag>SpringMVC</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Mybatis的缓存机制</title>
     <link href="/2021/07/15/Mybatis-cache/"/>
     <url>/2021/07/15/Mybatis-cache/</url>
