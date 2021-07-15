@@ -14,13 +14,13 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
   <meta name="theme-color" content="#2f4154">
-  <meta name="description" content="谈谈对IOC和DI的理解">
+  <meta name="description" content="Mybatis的缓存机制">
   <meta name="author" content="MuLeII">
   <meta name="keywords" content="">
   
      <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script> <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css"/> 
   
-  <title>Spring-谈谈对IOC和DI的理解 | MuLeII</title>
+  <title>Mybatis的缓存机制 | MuLeII</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
 
@@ -180,7 +180,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="Spring-谈谈对IOC和DI的理解">
+            <span class="h2" id="subtitle" title="Mybatis的缓存机制">
               
             </span>
 
@@ -195,8 +195,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2021-07-12 22:05" pubdate>
-        2021年7月12日 晚上
+      <time datetime="2021-07-15 22:16" pubdate>
+        2021年7月15日 晚上
       </time>
     </span>
   
@@ -207,7 +207,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      626 字
+      707 字
     </span>
   
 
@@ -217,7 +217,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      6
+      9
        分钟
     </span>
   
@@ -255,27 +255,47 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Spring-谈谈对IOC和DI的理解</h1>
+            <h1 style="display: none">Mybatis的缓存机制</h1>
             
               <p class="note note-info">
                 
-                  本文最后更新于：2 天前
+                  本文最后更新于：1 分钟前
                 
               </p>
             
             <div class="markdown-body">
-              <h1 id="谈谈对IOC和DI的理解"><a href="#谈谈对IOC和DI的理解" class="headerlink" title="谈谈对IOC和DI的理解"></a>谈谈对IOC和DI的理解</h1><h2 id="IOC：控制反转，是一种设计理念，由第三方来管理与控制对象"><a href="#IOC：控制反转，是一种设计理念，由第三方来管理与控制对象" class="headerlink" title="IOC：控制反转，是一种设计理念，由第三方来管理与控制对象"></a>IOC：控制反转，是一种设计理念，由第三方来管理与控制对象</h2><p>通常我们创建对象时都是通过<code>new</code>关键字来实现的，这就带来一些问题：</p>
-<p>1、每次我们需要使用对象时，都要手动创建。</p>
-<p>2、当我们需要对某一个类进行修改时，需要手动将所有通过<code>new</code>关键字创建的对象从新编写，工作量将会非常恐怖。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs java">IDAO dao = <span class="hljs-keyword">new</span> UserDAO();<br><br>IDAO dao = (IDAO) applicationContext.getBean(<span class="hljs-string">&quot;userDAO&quot;</span>);<br>&lt;bean id = <span class="hljs-string">&quot;userDAO&quot;</span> <span class="hljs-class"><span class="hljs-keyword">class</span> </span>= <span class="hljs-string">&quot;com.test.dao.UserDAO&quot;</span>/&gt;<br></code></pre></td></tr></table></figure>
+              <h1 id="Mybatis的缓存机制"><a href="#Mybatis的缓存机制" class="headerlink" title="Mybatis的缓存机制"></a>Mybatis的缓存机制</h1><h2 id="缓存"><a href="#缓存" class="headerlink" title="缓存"></a>缓存</h2><p>将一些不太常变更的数据，保存在内存中，或者某些高速存储器上，从而提升我们查询数据的效率</p>
+<h2 id="Mybatis的两级缓存"><a href="#Mybatis的两级缓存" class="headerlink" title="Mybatis的两级缓存"></a>Mybatis的两级缓存</h2><h4 id="1、一级缓存与SqlSessoin会话绑定，默认开启"><a href="#1、一级缓存与SqlSessoin会话绑定，默认开启" class="headerlink" title="1、一级缓存与SqlSessoin会话绑定，默认开启"></a>1、一级缓存与SqlSessoin会话绑定，默认开启</h4><h4 id="2、二级缓存是应用程序全局缓存，所有SqlSession共享，需要手动开启"><a href="#2、二级缓存是应用程序全局缓存，所有SqlSession共享，需要手动开启" class="headerlink" title="2、二级缓存是应用程序全局缓存，所有SqlSession共享，需要手动开启"></a>2、二级缓存是应用程序全局缓存，所有SqlSession共享，需要手动开启</h4><ul>
+<li><p>一级缓存是将数据保存在内存中（一个巨大的HashMap），一个SqlSession对应一个HashMap</p>
+</li>
+<li><p><strong>一级缓存的生命周期</strong>：随着SqlSession创建而创建，当SqlSessioin Close关闭时跟着销毁，一级缓存的生命周期较短</p>
+</li>
+<li><p>二级缓存是应用程序全局的缓存，只要Mybatis在启动的过程中，二级缓存就会一直存在，二级缓存的载体可以是内存中的一个HashMap，也可以是一个单体的缓存框架，例如Ehcache、分布式NoSql数据库Redis。对于二级缓存来说，所有的SqlSesion都可以访问其中的数据。</p>
+</li>
+<li><p><strong>二级缓存的生命周期</strong>：随着MybatisSessionFactory的创建而创建，在SessionFactory销毁时消失</p>
+</li>
+<li><p>二级缓存相较于一级缓存，二级缓存存活周期更长，需要的空间更大，但缓存的命中率更高</p>
+</li>
+</ul>
+<h3 id="一级缓存默认开启"><a href="#一级缓存默认开启" class="headerlink" title="一级缓存默认开启"></a>一级缓存默认开启</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs java">SqlSession session = sessionFactory.openSession();<br>Employee emp1 = session.selectOne(statement, <span class="hljs-number">7566</span>);<br>System.out.println(emp1);<br>Employee emp2 = session.selectOne(statement, <span class="hljs-number">7566</span>);<br>System.out.println(emp2);<br>session.close();<br></code></pre></td></tr></table></figure>
 
-<p>解决办法就是使用“对象容器”，动态生成JavaBean对象，通过使用“对象容器”（<code>applicationContext</code>），我们可以将整个程序中有效的依赖实现“解耦”（降低耦合解除耦合）。</p>
-<h3 id="控制反转"><a href="#控制反转" class="headerlink" title="控制反转"></a>控制反转</h3><p>传统情况下我们使用<code>new</code>关键字创建对象，也就是由我们编译的程序代码决定使用哪个对象，我们称之为“正向控制”。而“控制反转”则是将对象的控制权交给第三方的“对象容器”，由“对象容器”在运行时创建对应的对象，再赋值给对应的变量。</p>
-<h3 id="IOC的好处"><a href="#IOC的好处" class="headerlink" title="IOC的好处"></a>IOC的好处</h3><p>让对象和对象之间的引用实现了有效的解耦。因为是在运行时完成的，所以当我们系统底层的类发生变化的时候，只需要修改配置文件就可以，极大的方便了工程维护和代码管理。</p>
-<h2 id="DI：依赖注入，是IOC控制反转理念的具体技术实现，由对象容器在运行时动态注入对象"><a href="#DI：依赖注入，是IOC控制反转理念的具体技术实现，由对象容器在运行时动态注入对象" class="headerlink" title="DI：依赖注入，是IOC控制反转理念的具体技术实现，由对象容器在运行时动态注入对象"></a>DI：依赖注入，是IOC控制反转理念的具体技术实现，由对象容器在运行时动态注入对象</h2><h3 id="DI-依赖注入是基于两种技术来实现的"><a href="#DI-依赖注入是基于两种技术来实现的" class="headerlink" title="DI 依赖注入是基于两种技术来实现的"></a>DI 依赖注入是基于两种技术来实现的</h3><h3 id="1、反射"><a href="#1、反射" class="headerlink" title="1、反射"></a>1、反射</h3><p>在运行时，进行动态的创建、设置以及管理。</p>
-<h4 id="Java反射机制"><a href="#Java反射机制" class="headerlink" title="Java反射机制"></a>Java反射机制</h4><p>在运行状态下，对于任意一个类都能知道他的属性和方法；对于任意一个对象都能调用它的任意一个属性和方法。这种动态获取的信息以及动态调用方法的功能称为Java的反射机制。</p>
-<h3 id="2、工厂模式"><a href="#2、工厂模式" class="headerlink" title="2、工厂模式"></a>2、工厂模式</h3><p>不必关注对象创建的细节，直接返回接口，在运行时由工厂动态决定是由哪个对象进行实例化。</p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><h3 id="DI是一种具体的技术实现，它是对宏观的IOC理念的一种技术上的诠释，在Spring中使用了反射和工厂模式来实现DI。"><a href="#DI是一种具体的技术实现，它是对宏观的IOC理念的一种技术上的诠释，在Spring中使用了反射和工厂模式来实现DI。" class="headerlink" title="DI是一种具体的技术实现，它是对宏观的IOC理念的一种技术上的诠释，在Spring中使用了反射和工厂模式来实现DI。"></a>DI是一种具体的技术实现，它是对宏观的IOC理念的一种技术上的诠释，在Spring中使用了反射和工厂模式来实现DI。</h3>
+<figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs angelscript">..entity.<span class="hljs-symbol">Employee@</span><span class="hljs-number">589838</span>eb<br>..entity.<span class="hljs-symbol">Employee@</span><span class="hljs-number">589838</span>eb<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs java">SqlSession session1 = sessionFactory.openSession();<br>Employee emp1 = session1.selectOne(statement, <span class="hljs-number">7566</span>);<br>System.out.println(emp1);<br>session1.close();<br>SqlSession session2 = sessionFactory.openSession();<br>Employee emp2 = session2.selectOne(statement, <span class="hljs-number">7566</span>);<br>System.out.println(emp2);<br>session2.close();<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs angelscript">..entity.<span class="hljs-symbol">Employee@</span><span class="hljs-number">4</span>dfa3a9d<br>..entity.<span class="hljs-symbol">Employee@</span><span class="hljs-number">464</span>bee09<br></code></pre></td></tr></table></figure>
+
+<h3 id="开启二级缓存"><a href="#开启二级缓存" class="headerlink" title="开启二级缓存"></a>开启二级缓存</h3><ul>
+<li>映射器 emp.xml</li>
+</ul>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">mapper</span> <span class="hljs-attr">namespace</span>=<span class="hljs-string">&quot;..mapper.EmpMapper&quot;</span>&gt;</span><br>	<span class="hljs-comment">&lt;!-- cache size=&quot;512&quot;：在二级缓存中最多容纳512个对象 --&gt;</span><br>	<span class="hljs-comment">&lt;!-- eviction=&quot;FIFO&quot;：缓存清除策略FIFO、LRU --&gt;</span><br>	<span class="hljs-comment">&lt;!-- flushInterval=&quot;60000&quot;：定时（每60s）兑缓存进行清理 --&gt;</span><br>	<span class="hljs-comment">&lt;!-- readOnly=&quot;true&quot;：保存在缓存中的对象不允许被修改 --&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">cache</span> <span class="hljs-attr">size</span>=<span class="hljs-string">&quot;512&quot;</span> <span class="hljs-attr">eviction</span>=<span class="hljs-string">&quot;FIFO&quot;</span> <span class="hljs-attr">flushInterval</span>=<span class="hljs-string">&quot;60000&quot;</span> <span class="hljs-attr">readOnly</span>=<span class="hljs-string">&quot;true&quot;</span>/&gt;</span><br><br>	<span class="hljs-comment">&lt;!-- useCache=&quot;false&quot;：不使用缓存 --&gt;</span><br>	<span class="hljs-comment">&lt;!-- 通常查询结果为多个对象时，不建议使用二级缓存。因为list列表中任何一个元素发生变化后，Mybatis为了保证缓存中的数据和数据库中数据的一致，会将整个list进行处理 --&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">select</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;findAll&quot;</span></span><br><span class="hljs-tag">            <span class="hljs-attr">resultType</span>=<span class="hljs-string">&quot;..entity.Employee&quot;</span> <span class="hljs-attr">useCache</span>=<span class="hljs-string">&quot;false&quot;</span>&gt;</span><br>        select * from emp<br>    <span class="hljs-tag">&lt;/<span class="hljs-name">select</span>&gt;</span><br><br>    <span class="hljs-tag">&lt;<span class="hljs-name">select</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;findById&quot;</span> <span class="hljs-attr">parameterType</span>=<span class="hljs-string">&quot;int&quot;</span></span><br><span class="hljs-tag">            <span class="hljs-attr">resultType</span>=<span class="hljs-string">&quot;..entity.Employee&quot;</span> <span class="hljs-attr">useCache</span>=<span class="hljs-string">&quot;true&quot;</span>&gt;</span><br>        select * from emp where empno = #&#123;value&#125;<br>    <span class="hljs-tag">&lt;/<span class="hljs-name">select</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">mapper</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>使用二级缓存存储的对象对应实体类需要实现<code>Serializable</code>接口</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs java">SqlSession session1 = sessionFactory.openSession();<br>Employee emp1 = session1.selectOne(statement, <span class="hljs-number">7566</span>);<br>System.out.println(emp1);<br>session1.close();<br>SqlSession session2 = sessionFactory.openSession();<br>Employee emp2 = session2.selectOne(statement, <span class="hljs-number">7566</span>);<br>System.out.println(emp2);<br>session2.close();<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs angelscript">..entity.<span class="hljs-symbol">Employee@</span><span class="hljs-number">589838</span>eb<br>..entity.<span class="hljs-symbol">Employee@</span><span class="hljs-number">589838</span>eb<br></code></pre></td></tr></table></figure>
             </div>
             <hr>
             <div>
@@ -294,7 +314,7 @@
                     
                       <a class="hover-with-bg" href="/tags/Java/">Java</a>
                     
-                      <a class="hover-with-bg" href="/tags/Spring/">Spring</a>
+                      <a class="hover-with-bg" href="/tags/Mybatis/">Mybatis</a>
                     
                   </div>
                 
@@ -311,18 +331,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2021/07/12/Spring-instantiation/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Spring中Bean实例化的三种方式</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2021/07/11/SQL-training/">
-                        <span class="hidden-mobile">SQL练习</span>
+                      <a href="/2021/07/13/Mybatis-dev-flow/">
+                        <span class="hidden-mobile">Mybatis的开发流程</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
