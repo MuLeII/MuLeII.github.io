@@ -14,13 +14,13 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
   <meta name="theme-color" content="#2f4154">
-  <meta name="description" content="谈谈对IOC和DI的理解">
+  <meta name="description" content="对IOC和DI的理解">
   <meta name="author" content="MuLeII">
   <meta name="keywords" content="">
   
      <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script> <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css"/> 
   
-  <title>Spring-谈谈对IOC和DI的理解 | MuLeII</title>
+  <title>Spring：IOC和DI | MuLeII</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
 
@@ -180,7 +180,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="Spring-谈谈对IOC和DI的理解">
+            <span class="h2" id="subtitle" title="Spring：IOC和DI">
               
             </span>
 
@@ -207,7 +207,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      626 字
+      624 字
     </span>
   
 
@@ -255,16 +255,16 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Spring-谈谈对IOC和DI的理解</h1>
+            <h1 style="display: none">Spring：IOC和DI</h1>
             
               <p class="note note-info">
                 
-                  本文最后更新于：2 天前
+                  本文最后更新于：几秒前
                 
               </p>
             
             <div class="markdown-body">
-              <h1 id="谈谈对IOC和DI的理解"><a href="#谈谈对IOC和DI的理解" class="headerlink" title="谈谈对IOC和DI的理解"></a>谈谈对IOC和DI的理解</h1><h2 id="IOC：控制反转，是一种设计理念，由第三方来管理与控制对象"><a href="#IOC：控制反转，是一种设计理念，由第三方来管理与控制对象" class="headerlink" title="IOC：控制反转，是一种设计理念，由第三方来管理与控制对象"></a>IOC：控制反转，是一种设计理念，由第三方来管理与控制对象</h2><p>通常我们创建对象时都是通过<code>new</code>关键字来实现的，这就带来一些问题：</p>
+              <h1 id="对IOC和DI的理解"><a href="#对IOC和DI的理解" class="headerlink" title="对IOC和DI的理解"></a>对IOC和DI的理解</h1><h2 id="IOC：控制反转，是一种设计理念，由第三方来管理与控制对象"><a href="#IOC：控制反转，是一种设计理念，由第三方来管理与控制对象" class="headerlink" title="IOC：控制反转，是一种设计理念，由第三方来管理与控制对象"></a>IOC：控制反转，是一种设计理念，由第三方来管理与控制对象</h2><p>通常我们创建对象时都是通过<code>new</code>关键字来实现的，这就带来一些问题：</p>
 <p>1、每次我们需要使用对象时，都要手动创建。</p>
 <p>2、当我们需要对某一个类进行修改时，需要手动将所有通过<code>new</code>关键字创建的对象从新编写，工作量将会非常恐怖。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs java">IDAO dao = <span class="hljs-keyword">new</span> UserDAO();<br><br>IDAO dao = (IDAO) applicationContext.getBean(<span class="hljs-string">&quot;userDAO&quot;</span>);<br>&lt;bean id = <span class="hljs-string">&quot;userDAO&quot;</span> <span class="hljs-class"><span class="hljs-keyword">class</span> </span>= <span class="hljs-string">&quot;com.test.dao.UserDAO&quot;</span>/&gt;<br></code></pre></td></tr></table></figure>
