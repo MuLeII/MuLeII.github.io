@@ -259,7 +259,7 @@
             
               <p class="note note-info">
                 
-                  本文最后更新于：1 分钟前
+                  本文最后更新于：2 分钟前
                 
               </p>
             
@@ -267,7 +267,7 @@
               <h1 id="SpringBoot常见问题"><a href="#SpringBoot常见问题" class="headerlink" title="SpringBoot常见问题"></a>SpringBoot常见问题</h1><h4 id="1-创建Spring-Boot工程的方法"><a href="#1-创建Spring-Boot工程的方法" class="headerlink" title="1. 创建Spring Boot工程的方法"></a>1. 创建Spring Boot工程的方法</h4><ul>
 <li><p>使用<strong>Spring Initializr</strong>创建Spring Boot工程</p>
 </li>
-<li><p>使用<strong>Maven</strong>手动创建工程，Spring Initializr本质上就是一个Maven工程；Spring Boot 的兼容性很好，基于Maven可以在各种环境和各种IDE之间进行灵活切换</p>
+<li><p>使用<strong>Maven</strong>手动创建工程，Spring Initializr本质上就是一个Maven工程；Spring Boot的兼容性很好，基于Maven可以在各种环境和各种IDE之间进行灵活切换</p>
 </li>
 </ul>
 <h4 id="2-Spring-Boot的配置文件"><a href="#2-Spring-Boot的配置文件" class="headerlink" title="2. Spring Boot的配置文件"></a>2. Spring Boot的配置文件</h4><p>Spring Boot目前支持两种配置文件：</p>
@@ -277,7 +277,7 @@
 <figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs properties"><span class="hljs-meta">server.port</span>=<span class="hljs-string">80</span><br><span class="hljs-meta">server.servlet.context-path</span>=<span class="hljs-string">/springboot</span><br><br><span class="hljs-meta">spring.datasource.driver-class-name</span>=<span class="hljs-string">com.mysql.cj.jdbc.Driver</span><br><span class="hljs-meta">spring.datasource.username</span>=<span class="hljs-string">root</span><br><span class="hljs-meta">spring.datasource.password</span>=<span class="hljs-string">root</span><br><span class="hljs-meta">spring.datasource.url</span>=<span class="hljs-string">jdbc:mysql://localhost:3306/springboot?useSSL=false&amp;useUnicode=true&amp;characterEncoding=UTF-8&amp;serverTimezone=Asia/Shanghai</span><br></code></pre></td></tr></table></figure>
 
 <ul>
-<li>第二种：<strong>YAML文件</strong><code>.yaml</code>，按层级进行区分，统一个类型的配置项都是集中在一起的，利于程序段维护</li>
+<li>第二种：<strong>YAML文件</strong><code>.yaml</code>，按层级进行区分，同一个类型的配置项都是集中在一起的，利于程序段维护</li>
 </ul>
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs YAML"><span class="hljs-attr">server:</span><br>	<span class="hljs-attr">port:</span> <span class="hljs-number">80</span><br>	<span class="hljs-attr">servlet:</span><br>		<span class="hljs-attr">context-path:</span> <span class="hljs-string">/springboot</span><br><br><span class="hljs-attr">spring:</span><br>	<span class="hljs-attr">datasource:</span><br>		<span class="hljs-attr">driver-class-name:</span> <span class="hljs-string">com.mysql.cj.jdbc.Driver</span><br>		<span class="hljs-attr">username:</span> <span class="hljs-string">root</span><br>		<span class="hljs-attr">password:</span> <span class="hljs-string">root</span><br>		<span class="hljs-attr">url:</span> <span class="hljs-string">jdbc:mysql://localhost:3306/springboot?useSSL=false&amp;useUnicode=true&amp;characterEncoding=UTF-8&amp;serverTimezone=Asia/Shanghai</span><br></code></pre></td></tr></table></figure>
 
