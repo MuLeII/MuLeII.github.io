@@ -4,6 +4,33 @@
   
   
   <entry>
+    <title>Maven的构建生命周期</title>
+    <link href="/2021/07/18/maven-build/"/>
+    <url>/2021/07/18/maven-build/</url>
+    
+    <content type="html"><![CDATA[<h1 id="Maven的构建生命周期"><a href="#Maven的构建生命周期" class="headerlink" title="Maven的构建生命周期"></a>Maven的构建生命周期</h1><p><img src="/img/article_content/cover-maven.png"></p><h4 id="1-mvn-archetype-generate-创建Maven的标准工程结构"><a href="#1-mvn-archetype-generate-创建Maven的标准工程结构" class="headerlink" title="1. mvn archetype:generate 创建Maven的标准工程结构"></a>1. <code>mvn archetype:generate</code> 创建Maven的标准工程结构</h4><h4 id="2-mvn-validate-前置检查，验证工程结构（创建Maven工程后自动执行，一般不手动执行）"><a href="#2-mvn-validate-前置检查，验证工程结构（创建Maven工程后自动执行，一般不手动执行）" class="headerlink" title="2. mvn validate 前置检查，验证工程结构（创建Maven工程后自动执行，一般不手动执行）"></a>2. <code>mvn validate</code> 前置检查，验证工程结构（创建Maven工程后自动执行，一般不手动执行）</h4><h4 id="3-mvn-compile-编译源代码，使用系统中安装的JDK来进行"><a href="#3-mvn-compile-编译源代码，使用系统中安装的JDK来进行" class="headerlink" title="3. mvn compile 编译源代码，使用系统中安装的JDK来进行"></a>3. <code>mvn compile</code> 编译源代码，使用系统中安装的JDK来进行</h4><h4 id="4-mvn-test-执行工程中保存你的单元测试用例"><a href="#4-mvn-test-执行工程中保存你的单元测试用例" class="headerlink" title="4. mvn test 执行工程中保存你的单元测试用例"></a>4. <code>mvn test</code> 执行工程中保存你的单元测试用例</h4><h4 id="5-mvn-package-项目打包（J2SE工程打包成jar包，web工程会打包成war包）"><a href="#5-mvn-package-项目打包（J2SE工程打包成jar包，web工程会打包成war包）" class="headerlink" title="5. mvn package 项目打包（J2SE工程打包成jar包，web工程会打包成war包）"></a>5. <code>mvn package</code> 项目打包（J2SE工程打包成jar包，web工程会打包成war包）</h4><h4 id="6-mvn-install-将jar包安装到本地仓库，本地的其它系统可以通过Maven的坐标系引用到生成的jar包"><a href="#6-mvn-install-将jar包安装到本地仓库，本地的其它系统可以通过Maven的坐标系引用到生成的jar包" class="headerlink" title="6. mvn install 将jar包安装到本地仓库，本地的其它系统可以通过Maven的坐标系引用到生成的jar包"></a>6. <code>mvn install</code> 将jar包安装到本地仓库，本地的其它系统可以通过Maven的坐标系引用到生成的jar包</h4><h4 id="7-mvn-deploy-将jar包发布至远程仓库（多人合作时共享jar包）"><a href="#7-mvn-deploy-将jar包发布至远程仓库（多人合作时共享jar包）" class="headerlink" title="7. mvn deploy 将jar包发布至远程仓库（多人合作时共享jar包）"></a>7. <code>mvn deploy</code> 将jar包发布至远程仓库（多人合作时共享jar包）</h4>]]></content>
+    
+    
+    <categories>
+      
+      <category>Java</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Java</tag>
+      
+      <tag>Maven</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>SpringBoot常见问题</title>
     <link href="/2021/07/15/SpringBoot-question/"/>
     <url>/2021/07/15/SpringBoot-question/</url>
