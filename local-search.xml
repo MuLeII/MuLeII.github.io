@@ -4,6 +4,60 @@
   
   
   <entry>
+    <title>Redis的存储类型</title>
+    <link href="/2021/07/18/redis-type/"/>
+    <url>/2021/07/18/redis-type/</url>
+    
+    <content type="html"><![CDATA[<h1 id="Redis支持的存储类型"><a href="#Redis支持的存储类型" class="headerlink" title="Redis支持的存储类型"></a>Redis支持的存储类型</h1><h3 id="Redis支持五种数据类型：String，Hash，List，Set，ZSet"><a href="#Redis支持五种数据类型：String，Hash，List，Set，ZSet" class="headerlink" title="Redis支持五种数据类型：String，Hash，List，Set，ZSet"></a>Redis支持五种数据类型：String，Hash，List，Set，ZSet</h3><h4 id="1、String"><a href="#1、String" class="headerlink" title="1、String"></a>1、String</h4><p><img src="/img/article_content/redis-string-0.png"></p><ul><li><p>可以存储字符串、整数或者浮点数，最大512M Byte</p></li><li><p>常用命令<br><img src="/img/article_content/redis-string-1.png"></p></li></ul><h4 id="2、Hash"><a href="#2、Hash" class="headerlink" title="2、Hash"></a>2、Hash</h4><p><img src="/img/article_content/redis-hash-0.png"></p><ul><li><p>包含键值对的无序散列表：用于存储结构化数据，如保存一个员工的姓名、年龄、生日、身高等属性，可用该结构保存“emp”这个结构，使用一个key（emp:1）查询其所有信息。可以简化redis存储结构，提高redis数据可用性</p></li><li><p>常用命令<br><img src="/img/article_content/redis-hash-1.png"></p></li></ul><h4 id="3、List"><a href="#3、List" class="headerlink" title="3、List"></a>3、List</h4><ul><li><p>列表：一系列字符串的“数组”，按插入顺序排序，最大的长度是2的32次方-1，可以包含40亿个元素</p></li><li><p>常用命令<br><img src="/img/article_content/redis-list-0.png"></p></li></ul><h4 id="4、Set"><a href="#4、Set" class="headerlink" title="4、Set"></a>4、Set</h4><ul><li><p>无序集合：Set集合是字符串的无序集合，集合成员是唯一的</p></li><li><p>常用命令：sadd 创建集合及添加成员，smembers 查看成员，sunion 合并两个集合去掉重复元素，sdiff 差集</p></li></ul><h4 id="5、ZSet"><a href="#5、ZSet" class="headerlink" title="5、ZSet"></a>5、ZSet</h4><ul><li><p>有序集合：Zset集合是字符串的有序集合，集合成员是唯一的</p></li><li><p>常用命令：zadd 创建集合及添加成员，zrange 查看范围内元素，withdcores 输出分数，zrangebyscore 按分数范围输出元素</p></li></ul>]]></content>
+    
+    
+    <categories>
+      
+      <category>Java</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Java</tag>
+      
+      <tag>Redis</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Mybatis常见问题</title>
+    <link href="/2021/07/18/Mybatis-question/"/>
+    <url>/2021/07/18/Mybatis-question/</url>
+    
+    <content type="html"><![CDATA[<h1 id="Mybatis常见问题"><a href="#Mybatis常见问题" class="headerlink" title="Mybatis常见问题"></a>Mybatis常见问题</h1><h2 id="Mybatis中resultMap和resultType的区别"><a href="#Mybatis中resultMap和resultType的区别" class="headerlink" title="Mybatis中resultMap和resultType的区别"></a>Mybatis中resultMap和resultType的区别</h2><h3 id="resultType"><a href="#resultType" class="headerlink" title="resultType"></a>resultType</h3><p>输出映射, 只有当查询出的列名（字段名）和pojo的属性名一致, 该列才映射成功; 数据库，实体，查询字段全部都得一一对应。pojo变量使用驼峰命名，可以通过mapUnderscoreToCamelCase设置为true匹配。</p><h3 id="resultMap"><a href="#resultMap" class="headerlink" title="resultMap"></a>resultMap</h3><p>将sql查询结果映射为java对象，比resultType更强大，可以将查询结果映射为复杂类型的Java对象，适用于Java对象保存多表关联所产生的复合结果，支持对象关联查询等高级查询特性。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Java</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Java</tag>
+      
+      <tag>Mybatis</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Maven的构建生命周期</title>
     <link href="/2021/07/18/maven-build/"/>
     <url>/2021/07/18/maven-build/</url>
